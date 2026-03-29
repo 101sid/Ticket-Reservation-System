@@ -4,6 +4,7 @@
  */
 package com.mycompany.project_team_14;
 
+//Testing the automation
 
 public class Passenger {
     public String Name;
