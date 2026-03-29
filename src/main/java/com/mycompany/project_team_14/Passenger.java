@@ -4,17 +4,14 @@
  */
 package com.mycompany.project_team_14;
 
-/**
- *
- * @author siddh
- */
+
 public class Passenger {
     public String Name;
     public int Age;
     public String Address;
 
     public void SearchTrains() {
-        System.out.println(Name + " is searching for available trains...");
+        System.out.println(Name + " is searching for available trainss...");
     }
 
     public void ViewSchedule() {
