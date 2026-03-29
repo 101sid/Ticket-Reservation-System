@@ -15,7 +15,7 @@ public class Ticket {
     public String PassengerNo;
 
     public double PaymentAmount() {
-        return 1200.50; 
+        return 1500; 
     }
 
     public void CancelTicket() {
