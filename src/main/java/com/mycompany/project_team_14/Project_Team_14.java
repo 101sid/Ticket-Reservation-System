@@ -16,7 +16,7 @@ public class Project_Team_14 {
         passenger.Age = 24;
         
         TicketClerk clerk = new TicketClerk();
-        clerk.Name = "Officer Sudhakar"; 
+        clerk.Name = "Officer Rohan"; 
         clerk.Location = "Vellore Station";
 
         System.out.println("--- Starting Ticket Reservation System ---");
