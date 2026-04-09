@@ -1,11 +1,13 @@
-# 1. Use the specific image you mentioned
-FROM eclipse-temurin:17-jdk
+# STAGE 1: Build the JAR inside the cloud
+FROM maven:3.8.5-openjdk-17 AS build
+COPY . .
+# This compiles the code and runs your Question 4 tests
+RUN mvn clean package -DskipTests=false
 
-# 2. Set the working directory
+# STAGE 2: Run the JAR
+FROM openjdk:17-jdk-slim
 WORKDIR /app
-
-# 3. Copy the JAR (Double-check lowercase/uppercase to match your target folder)
-COPY target/project_team_14-1.0-SNAPSHOT.jar app.jar
-
-# 4. Command to execute the system
+# This copies the JAR created in the stage above
+COPY --from=build /target/project_team_14-1.0-SNAPSHOT.jar app.jar
+EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "app.jar"]
